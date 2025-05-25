@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Результаты {{ hw_name }} - {{ group_id }}</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Результаты домашней работы: {{ hw_name }}</h1>
+    <h2>Группа: {{ group_id }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Студент</th>
+                <th>Группа</th>
+                <th>Балл</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>{{ row.group }}</td>
+                <td>{{ row.score }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
